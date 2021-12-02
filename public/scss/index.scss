@@ -1,0 +1,91 @@
+.game {
+  width: 1400px;
+  height: 700px;
+  border: 2px solid black;
+
+  display: grid;
+  grid-template-rows: 5fr 5fr 5fr 5fr 5fr;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 10fr 10fr 10fr 10fr 10fr 10fr 10fr 10fr 10fr 10fr;
+  }
+
+  &-spot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 140px;
+    max-height: 140px;
+  }
+}
+
+.towerBar {
+  width: 700px;
+  border: 2px solid gray;
+
+  display: grid;
+  grid-template-columns: 6fr 6fr 6fr 6fr 6fr 6fr;
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__tower {
+    padding: 10px;
+  }
+
+  &__pricing {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 6fr 6fr 6fr 6fr 6fr 6fr;
+
+    &__tower {
+      display: flex;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.error {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25rem;
+  background-color: rgb(255, 87, 87);
+  padding: 15px;
+  border-radius: 15px;
+  transition: 400ms;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+
+  &__description {
+    font-style: 1.5rem;
+  }
+}
+
+.coinCount {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-right: 5rem;
+}
+
+.border {
+  border-right: 1px solid gray;
+}
+
+.tower {
+  cursor: pointer;
+  padding: 20px;
+}

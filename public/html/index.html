@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="shortcut icon" href="../extras/dragon.svg" type="image/x-icon">
+    <title>Tower Defence</title>
+</head>
+<body>
+    <div class="sideBar closed">
+        <div class="sideBar__header">
+            <p class="sideBar__header__tower">TowerName</p>
+            <img src="../extras/closeSidebar.svg" alt="Close Button" onclick="closeSideBar()" class="sideBar__header__close">
+        </div>
+    </div>
+
+    <p class="coinCount">$0</p>
+
+    <div class="error closed">
+        <p class="error__title">- ERROR -</p>
+        <p class="error__description">An error has occur with no info.</p>
+    </div>
+
+    <div class="game">
+        <div class="game__row">
+            <div class="game-track" id="track-1"></div>
+            <div class="game-track" id="track-2"></div>
+            <div class="game-track" id="track-3"></div>
+            <div class="game-track" id="track-4"></div>
+            <div class="game-track" id="track-5"></div>
+            <div class="game-track" id="track-6"></div>
+            <div class="game-track" id="track-7"></div>
+            <div class="game-track" id="track-8"></div>
+            <div class="game-track" id="track-9"></div>
+            <div class="game-track" id="track-10"></div>
+        </div>
+
+        <div class="game__row">
+            <div class="game-spot" id="2-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="2-9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-track" id="track-11"></div>
+        </div>
+
+        <div class="game__row">
+            <div class="game-track" id="track-12"></div>
+            <div class="game-track" id="track-13"></div>
+            <div class="game-track" id="track-14"></div>
+            <div class="game-track" id="track-15"></div>
+            <div class="game-track" id="track-16"></div>
+            <div class="game-track" id="track-17"></div>
+            <div class="game-track" id="track-18"></div>
+            <div class="game-track" id="track-19"></div>
+            <div class="game-track" id="track-20"></div>
+            <div class="game-track" id="track-21"></div>
+        </div>
+
+        <div class="game__row">
+            <div class="game-track" id="track-22"></div>
+            <div class="game-spot" id="4-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+
+        <div class="game__row">
+            <div class="game-track" id="track-23"></div>
+            <div class="game-track" id="track-24"></div>
+            <div class="game-track" id="track-25"></div>
+            <div class="game-track" id="track-26"></div>
+            <div class="game-track" id="track-27"></div>
+            <div class="game-track" id="track-28"></div>
+            <div class="game-track" id="track-29"></div>
+            <div class="game-track" id="track-30"></div>
+            <div class="game-track" id="track-31"></div>
+            <div class="game-track" id="track-32"></div>
+        </div>
+    </div>
+
+    <div class="towerBar-wrapper">
+        <div class="towerBar" id="bar">
+            <img src="../extras/dragon.svg" alt="dragon" class="towerBar__tower border" draggable="true" id="dragon" cost="100" ondragstart="drag(event)">
+            <img src="../extras/king.svg" alt="king" class="towerBar__tower border" draggable="true" id="king" cost="200" ondragstart="drag(event)">
+            <img src="../extras/megalodon.svg" alt="megalodon" class="towerBar__tower border" draggable="true" cost="400" id="megalodon" ondragstart="drag(event)">
+            <img src="../extras/vampire.svg" alt="vampire" class="towerBar__tower border" draggable="true" cost="800" id="vampire" ondragstart="drag(event)">
+            <img src="../extras/witch.svg" alt="witch" class="towerBar__tower border" draggable="true" cost="1600" id="witch" ondragstart="drag(event)">
+            <img src="../extras/zombie.svg" alt="zombie" class="towerBar__tower border" draggable="true" cost="3200" id="zombie" ondragstart="drag(event)">
+        </div>
+
+        <div class="towerBar__pricing">
+            <p class="towerBar__pricing__tower">$100</p>
+            <p class="towerBar__pricing__tower">$200</p>
+            <p class="towerBar__pricing__tower">$400</p>
+            <p class="towerBar__pricing__tower">$800</p>
+            <p class="towerBar__pricing__tower">$1,600</p>
+            <p class="towerBar__pricing__tower">$3,200</p>
+        </div>
+    </div>
+</body>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/placeTower.js" type="module"></script>
+    <script src="../js/sideBar.js"></script>
+</html>

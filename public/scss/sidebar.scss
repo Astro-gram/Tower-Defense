@@ -1,0 +1,36 @@
+.sideBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15rem;
+  height: 100%;
+  z-index: 100;
+
+  transition: 400ms;
+
+  border-right: 2px solid gray;
+  background-color: white;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__tower {
+      font-size: 1.5rem;
+      margin-left: 10px;
+    }
+
+    &__close {
+      cursor: pointer;
+      width: 50px;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.closed {
+  transition: 400ms;
+  left: -20rem;
+}
