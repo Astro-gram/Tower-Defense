@@ -1,3 +1,8 @@
+import getTowerMap from "./setup.js";
+import Tower from "./towers/tower.js";
+
+let towerMap = getTowerMap();
+
 window.allowDrop = function allowDrop(e) {
     e.preventDefault();
 }
@@ -15,6 +20,8 @@ window.drop = function drop(e) {
         if (data.indexOf("_") <= -1) { //Check if the tower you are trying to copying is from the towerBar or not
             let towerElem = convertToTower(document.getElementById(data), e.target.id);
             e.target.appendChild(towerElem.cloneNode(true));
+            towerMap[e.target.id] = new Tower(e.target.id, towerCost);
+
             resetTowerBar();
 
             changeCoinCount(towerCost);
@@ -76,3 +83,20 @@ function error(desc, title = "ERROR") {
     document.querySelector(".error").classList.remove("closed");
     setTimeout(function() { document.querySelector(".error").classList.add("closed") }, 2000);
 }
+
+//towerMap Interface for other files
+
+function getTowerData(spotId) {
+    return towerMap[spotId];
+}
+
+function upgradeTower(spotId, coinCount) {
+    let tower = towerMap[spotId];
+    return tower.upgradeTower(Number(coinCount));
+}
+
+function removeTower(spotId) {
+    towerMap[spotId] = null;
+}
+
+export { getTowerData, upgradeTower, removeTower, error, changeCoinCount };

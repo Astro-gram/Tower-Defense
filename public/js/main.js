@@ -1,7 +1,4 @@
-import Tower from "./towers/tower.js";
-import getTowerDictionary from "./setup.js";
-
-localStorage.setItem("coinCount", 500);
+localStorage.setItem("coinCount", 10000);
 document.querySelector(".coinCount").innerHTML = `$${localStorage.getItem("coinCount")}`;
 
 function randColor() {
@@ -16,11 +13,3 @@ document.querySelectorAll(".game-spot").forEach((element) => {
 document.querySelectorAll(".game-track").forEach((element) => {
     element.style.backgroundColor = "red";
 });
-
-let dragon = new Tower("2-1", 100)
-dragon.upgrade(1000);
-console.log(dragon.stats());
-
-let test = getTowerDictionary(5, 10)
-
-console.log(test)

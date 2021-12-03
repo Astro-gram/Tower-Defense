@@ -16,6 +16,23 @@
             <p class="sideBar__header__tower">TowerName</p>
             <img src="../extras/closeSidebar.svg" alt="Close Button" onclick="closeSideBar()" class="sideBar__header__close">
         </div>
+
+        <div class="sideBar__main">
+            <img src="../extras/dragon.svg" alt="" class="sideBar__main__img">
+            <div class="sideBar__main-infoWrapper">
+                <p class="sideBar__main__tier">Tier: 1</p>
+                <div class="sideBar__main__upgrade-wrapper">
+                    <button class="sideBar__main__upgrade" id="upgrade-tower">Upgrade</button>
+                    <p class="sideBar__main__upgrade-price">Upgrade Cost: $100</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sideBar__spacing"></div>
+
+        <div class="sideBar__bottom">
+            <button class="sideBar__bottom__remove" id="remove-tower">Remove</button>
+        </div>
     </div>
 
     <p class="coinCount">$0</p>
@@ -107,12 +124,12 @@
             <p class="towerBar__pricing__tower">$200</p>
             <p class="towerBar__pricing__tower">$400</p>
             <p class="towerBar__pricing__tower">$800</p>
-            <p class="towerBar__pricing__tower">$1,600</p>
-            <p class="towerBar__pricing__tower">$3,200</p>
+            <p class="towerBar__pricing__tower">$1600</p>
+            <p class="towerBar__pricing__tower">$3200</p>
         </div>
     </div>
 </body>
     <script src="../js/main.js" type="module"></script>
     <script src="../js/placeTower.js" type="module"></script>
-    <script src="../js/sideBar.js"></script>
+    <script src="../js/sideBar.js" type="module"></script>
 </html>
