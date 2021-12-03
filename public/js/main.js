@@ -1,4 +1,4 @@
-localStorage.setItem("coinCount", 10000);
+localStorage.setItem("coinCount", 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
 document.querySelector(".coinCount").innerHTML = `$${localStorage.getItem("coinCount")}`;
 
 function randColor() {

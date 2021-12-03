@@ -95,8 +95,10 @@ function upgradeTower(spotId, coinCount) {
     return tower.upgradeTower(Number(coinCount));
 }
 
-function removeTower(spotId) {
+function removeTower(spotId, id) {
     towerMap[spotId] = null;
+    document.getElementById(id).remove();
+    document.querySelector(".sideBar").classList.add("closed");
 }
 
 export { getTowerData, upgradeTower, removeTower, error, changeCoinCount };
