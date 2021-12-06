@@ -1,4 +1,4 @@
-export default function getTowerMap() {
+export default function getBaseTowerMap() {
     let towerMap = {};
     let firstTimeThrough = true;
 

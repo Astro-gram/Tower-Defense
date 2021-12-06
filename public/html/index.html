@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/enemy.css">
     <link rel="shortcut icon" href="../extras/dragon.svg" type="image/x-icon">
     <title>Tower Defence</title>
 </head>
@@ -44,11 +45,11 @@
 
     <div class="game">
         <div class="game__row">
-            <div class="game-track" id="track-1"></div>
-            <div class="game-track" id="track-2"></div>
-            <div class="game-track" id="track-3"></div>
-            <div class="game-track" id="track-4"></div>
-            <div class="game-track" id="track-5"></div>
+            <div class="game-track" id="track-1"><div class="enemy-base enemy-1"></div></div>
+            <div class="game-track" id="track-2"><div class="enemy-base enemy-2"></div></div>
+            <div class="game-track" id="track-3"><div class="enemy-base enemy-3"></div></div>
+            <div class="game-track" id="track-4"><div class="enemy-base enemy-4"></div></div>
+            <div class="game-track" id="track-5"><div class="enemy-base enemy-5"></div></div>
             <div class="game-track" id="track-6"></div>
             <div class="game-track" id="track-7"></div>
             <div class="game-track" id="track-8"></div>
@@ -70,28 +71,28 @@
         </div>
 
         <div class="game__row">
-            <div class="game-track" id="track-12"></div>
-            <div class="game-track" id="track-13"></div>
-            <div class="game-track" id="track-14"></div>
-            <div class="game-track" id="track-15"></div>
-            <div class="game-track" id="track-16"></div>
-            <div class="game-track" id="track-17"></div>
-            <div class="game-track" id="track-18"></div>
-            <div class="game-track" id="track-19"></div>
-            <div class="game-track" id="track-20"></div>
             <div class="game-track" id="track-21"></div>
+            <div class="game-track" id="track-20"></div>
+            <div class="game-track" id="track-19"></div>
+            <div class="game-track" id="track-18"></div>
+            <div class="game-track" id="track-17"></div>
+            <div class="game-track" id="track-16"></div>
+            <div class="game-track" id="track-15"></div>
+            <div class="game-track" id="track-14"></div>
+            <div class="game-track" id="track-13"></div>
+            <div class="game-track" id="track-12"></div>
         </div>
 
         <div class="game__row">
             <div class="game-track" id="track-22"></div>
-            <div class="game-spot" id="4-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="game-spot" id="4-3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="game-spot" id="4-4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="game-spot" id="4-5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="game-spot" id="4-6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="game-spot" id="4-7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="game-spot" id="4-8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="game-spot" id="4-9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-18" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-17" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-16" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-15" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-14" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-13" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="game-spot" id="4-11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <div class="game-spot" id="4-10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
 
@@ -132,4 +133,5 @@
     <script src="../js/main.js" type="module"></script>
     <script src="../js/placeTower.js" type="module"></script>
     <script src="../js/sideBar.js" type="module"></script>
+    <script src="../js/track.js" type="module"></script>
 </html>

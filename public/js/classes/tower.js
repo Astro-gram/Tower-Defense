@@ -3,14 +3,15 @@ export default class Tower {
         this.spotId = spotId;
         this.tier = tier;
         this.towerCost = towerCost;
-        this.maxTiers = 5;
-        this.attackDamage = ((2 * this.tier) * this.towerCost)
+        this.attackDamage = Math.round((((2 * this.tier) * this.towerCost) / 1.5));
     }
 
     upgradeTower(coinCount) {
         if (coinCount >= (2 * this.tier * this.towerCost)) {
-            if (this.maxTiers > this.tier) {
+            if (5 > this.tier) {
                 this.tier++;
+                this.attackDamage = Math.round((((2 * this.tier) * this.towerCost) / 1.5));
+                console.log(this.attackDamage)
 
                 return {
                     success: true
@@ -40,7 +41,7 @@ export default class Tower {
         return {
             tier: this.tier,
             attackDamage: this.attackDamage,
-            damagesAndUpgrades: {
+            upgradeCost: {
                 tier1: ((2 * 1) * this.towerCost),
                 tier2: ((2 * 2) * this.towerCost),
                 tier3: ((2 * 3) * this.towerCost),

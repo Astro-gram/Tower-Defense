@@ -1,7 +1,7 @@
-import getTowerMap from "./setup.js";
-import Tower from "./towers/tower.js";
+import getBaseTowerMap from "./setup.js";
+import Tower from "./classes/tower.js";
 
-let towerMap = getTowerMap();
+let towerMap = getBaseTowerMap();
 
 window.allowDrop = function allowDrop(e) {
     e.preventDefault();
@@ -13,11 +13,15 @@ window.drag = function drag(e) {
   
 window.drop = function drop(e) {
     e.preventDefault();
-    let data = e.dataTransfer.getData("text");
-    let towerCost = Number(document.getElementById(data).getAttribute("cost"));
+    let data = e.dataTransfer.getData("text") || null;
+    let towerCost = 0;
 
+    if (data.length !== 2) {
+        towerCost = Number(document.getElementById(data).getAttribute("cost"));
+    }
+    
     if (localStorage.getItem("coinCount") >= towerCost) { //Check if you can afford it
-        if (data.indexOf("_") <= -1) { //Check if the tower you are trying to copying is from the towerBar or not
+        if (data.length !== 2 && data.indexOf("_") <= -1) { //Check if the tower you are trying to copying is from the towerBar or not
             let towerElem = convertToTower(document.getElementById(data), e.target.id);
             e.target.appendChild(towerElem.cloneNode(true));
             towerMap[e.target.id] = new Tower(e.target.id, towerCost);
@@ -27,7 +31,7 @@ window.drop = function drop(e) {
             changeCoinCount(towerCost);
         }
         else {
-            error("Don't you dare bro.");
+            error("An error has occured while trying to add a non-tower to the map.");
         }
     }
 
@@ -90,6 +94,10 @@ function getTowerData(spotId) {
     return towerMap[spotId];
 }
 
+function getTowerMap() {
+    return towerMap;
+}
+
 function upgradeTower(spotId, coinCount) {
     let tower = towerMap[spotId];
     return tower.upgradeTower(Number(coinCount));
@@ -101,4 +109,4 @@ function removeTower(spotId, id) {
     document.querySelector(".sideBar").classList.add("closed");
 }
 
-export { getTowerData, upgradeTower, removeTower, error, changeCoinCount };
+export { getTowerData, upgradeTower, removeTower, error, changeCoinCount, getTowerMap };

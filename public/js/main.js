@@ -1,15 +1,22 @@
-localStorage.setItem("coinCount", 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
+import Enemy from "./classes/enemy.js";
+import { moveEnemies, getTowerHitboxes } from "./track.js";
+import { getTowerMap } from "./placeTower.js";
+
+localStorage.setItem("coinCount", 1000000000000);
 document.querySelector(".coinCount").innerHTML = `$${localStorage.getItem("coinCount")}`;
 
-function randColor() {
-    let colors = ["red", "green", "blue", "purple", "yellow", "orange", "black", "gray"];
-    return colors[Math.floor(Math.random() * 8)];
+function main() {
+    moveEnemies();
+    let towers = getTowerMap();
+
+    for (let tower in towers) {
+        if (towers[tower] !== null) {
+            getTowerHitboxes(tower);
+            console.log(towers[tower].stats())
+        }
+    }
+
+    setTimeout(function() { main() }, 1000);
 }
 
-document.querySelectorAll(".game-spot").forEach((element) => {
-    element.style.backgroundColor = "green";
-});
-
-document.querySelectorAll(".game-track").forEach((element) => {
-    element.style.backgroundColor = "red";
-});
+main();

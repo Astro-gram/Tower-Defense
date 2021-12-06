@@ -1,0 +1,31 @@
+.enemy-base {
+  background-color: black;
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+  box-shadow: -2px -1px 5px 3px #c22828; }
+
+.enemy-1 {
+  background-color: #15b615;
+  width: 52.5%;
+  height: 52.5%; }
+
+.enemy-2 {
+  background-color: #cfe45a;
+  width: 55%;
+  height: 55%; }
+
+.enemy-3 {
+  background-color: #2cb7e6;
+  width: 57.5%;
+  height: 57.5%; }
+
+.enemy-4 {
+  background-color: #3167cc;
+  width: 62.5%;
+  height: 62.5%; }
+
+.enemy-5 {
+  background-color: white;
+  width: 70%;
+  height: 70%; }

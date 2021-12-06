@@ -18,6 +18,14 @@
 
     max-width: 140px;
     max-height: 140px;
+    background-color: green;
+  }
+
+  &-track {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

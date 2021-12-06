@@ -1,0 +1,37 @@
+.enemy-base {
+  background-color: black;
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+  box-shadow: -2px -1px 5px 3px rgb(194, 40, 40);
+}
+
+.enemy-1 {
+  background-color: rgb(21, 182, 21);
+  width: 52.5%;
+  height: 52.5%;
+}
+
+.enemy-2 {
+  background-color: rgb(207, 228, 90);
+  width: 55%;
+  height: 55%;
+}
+
+.enemy-3 {
+  background-color: rgb(44, 183, 230);
+  width: 57.5%;
+  height: 57.5%;
+}
+
+.enemy-4 {
+  background-color: rgb(49, 103, 204);
+  width: 62.5%;
+  height: 62.5%;
+}
+
+.enemy-5 {
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  height: 70%;
+}

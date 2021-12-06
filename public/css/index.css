@@ -12,7 +12,13 @@
     justify-content: center;
     align-items: center;
     max-width: 140px;
-    max-height: 140px; }
+    max-height: 140px;
+    background-color: green; }
+  .game-track {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .towerBar {
   width: 700px;
