@@ -3,7 +3,7 @@ This is the basic tower defense game made with vanilla Javascript and HTML5 with
 
 
 
-Towers Made By https://blooket.com
+Towers Used From: https://blooket.com
 
 ㅤ
 
