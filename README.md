@@ -5,7 +5,20 @@ This is the basic tower defense game made with vanilla Javascript and HTML5 with
 
 Towers Used From: https://blooket.com
 
-ㅤ
+
+Finished:
+- Tower Detail Sidebar
+- Moving Enemies
+- 6 Different Towers
+- Coin System
+- Damage/Health System
+- Can Upgrade Towers
+
+
+To-Dos:
+- Enemy Waves System
+- Polish and Add More Styling
+
 
 Notes:
 

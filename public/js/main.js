@@ -41,8 +41,9 @@ function main() {
 
                     if (enemy !== null && enemy !== undefined) { //Check if enemy is in tower hitbox
                         enemy.health -= towers[tower].attackDamage;
-                        changeCoinCount(Math.round(towers[tower].attackDamage), 1);
-                        console.log(Math.round(towers[tower].attackDamage));
+                        towers[tower].attack();
+                        changeCoinCount(Math.round(towers[tower].attackDamage / (6 - towers[tower].tier)), 1);
+                        console.log(Math.round(towers[tower].attackDamage / (6 - towers[tower].tier)));
 
                         console.log(enemy.health)
 
