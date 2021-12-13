@@ -1,4 +1,4 @@
-export default function getBaseTowerMap() {
+function getBaseTowerMap() {
     let towerMap = {};
     let firstTimeThrough = true;
 
@@ -19,3 +19,16 @@ export default function getBaseTowerMap() {
 
     return towerMap;
 }
+
+function getBaseEnemyMap() {
+    let enemyMap = {};
+    let trackLength = 32;
+
+    for (let i = 1; i < trackLength + 1; i++) {
+        enemyMap[i] = null;
+    }
+
+    return enemyMap;
+}
+
+export { getBaseTowerMap, getBaseEnemyMap };

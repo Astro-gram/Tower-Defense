@@ -80,6 +80,5 @@ document.getElementById("remove-tower").addEventListener("click", () => {
     let spotId = towerName.getAttribute("spot-id");
 
     removeTower(spotId, `${towerName.innerHTML.toLowerCase()}_${spotId}`);
-    getTowerHitboxes(spotId);
-
+    resetHighlighting();
 })

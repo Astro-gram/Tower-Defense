@@ -1,7 +1,8 @@
-import getBaseTowerMap from "./setup.js";
+import { getBaseTowerMap } from "./setup.js";
 import Tower from "./classes/tower.js";
 
 let towerMap = getBaseTowerMap();
+//towerMap["2-9"] = new Tower("2-9", "10000000000000", "5")
 
 window.allowDrop = function allowDrop(e) {
     e.preventDefault();
@@ -22,13 +23,19 @@ window.drop = function drop(e) {
     
     if (localStorage.getItem("coinCount") >= towerCost) { //Check if you can afford it
         if (data.length !== 2 && data.indexOf("_") <= -1) { //Check if the tower you are trying to copying is from the towerBar or not
-            let towerElem = convertToTower(document.getElementById(data), e.target.id);
-            e.target.appendChild(towerElem.cloneNode(true));
-            towerMap[e.target.id] = new Tower(e.target.id, towerCost);
+            if ((e.target.id).indexOf("_") <= -1) { //Check if that spot is already filled with another tower
+                console.log(data)
+                let towerElem = convertToTower(document.getElementById(data), e.target.id);
+                e.target.appendChild(towerElem.cloneNode(true));
+                towerMap[e.target.id] = new Tower(e.target.id, towerCost);
 
-            resetTowerBar();
+                resetTowerBar();
 
-            changeCoinCount(towerCost);
+                changeCoinCount(towerCost);
+            }
+            else {
+                error("Tower spot already filled.");
+            }
         }
         else {
             error("An error has occured while trying to add a non-tower to the map.");
@@ -73,8 +80,15 @@ function convertToTower(towerElement, spotId, backToTowerBar = false) {
     return towerElement;
 }
 
-function changeCoinCount(difference) {
-    let newCoinCount = localStorage.getItem("coinCount") - difference;
+function changeCoinCount(difference, addOrSubtract = 0) {
+    let newCoinCount;
+
+    if (addOrSubtract === 1) {
+        newCoinCount = Number(localStorage.getItem("coinCount")) + difference;
+    }
+    else {
+        newCoinCount = Number(localStorage.getItem("coinCount")) - difference;
+    }
 
     localStorage.setItem("coinCount", newCoinCount);
     document.querySelector(".coinCount").innerHTML = `$${newCoinCount}`;

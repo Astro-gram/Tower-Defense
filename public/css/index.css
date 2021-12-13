@@ -71,3 +71,17 @@
   transition: 300ms;
   cursor: pointer;
   padding: 20px; }
+
+.play-container {
+  position: absolute;
+  top: 5rem;
+  right: 2rem;
+  background-color: gray;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px; }
+  .play-container__btn {
+    width: 5rem;
+    cursor: pointer; }
