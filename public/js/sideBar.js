@@ -78,7 +78,9 @@ document.getElementById("upgrade-tower").addEventListener("click", () => {
 document.getElementById("remove-tower").addEventListener("click", () => {
     let towerName = document.querySelector(".sideBar__header__tower");
     let spotId = towerName.getAttribute("spot-id");
+    let data = getTowerData(spotId);
 
     removeTower(spotId, `${towerName.innerHTML.toLowerCase()}_${spotId}`);
+    changeCoinCount(data.towerCost, 1);
     resetHighlighting();
 })
